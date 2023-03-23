@@ -13,7 +13,8 @@ public class Candle : MonoBehaviour
     [SerializeField, FoldoutGroup("Dependancies")] CandleManager candleManager;
     [SerializeField, FoldoutGroup("Dependancies")] GameObject fireParticlesObject;
     [SerializeField, FoldoutGroup("Dependancies")] List<ParticleSystem> fireParticles = new List<ParticleSystem>();
-
+    [SerializeField, FoldoutGroup("Dependancies")] AudioSource constanceSource;
+    [SerializeField, FoldoutGroup("Dependancies")] AudioSource putOutSource;
     [FoldoutGroup("Debugging")] public bool isLit = false;
 
     void OnValidate()
@@ -58,6 +59,7 @@ public class Candle : MonoBehaviour
     public void TurnOnFire()
     {
         fireParticles.ForEach(p => p.Play());
+        putOutSource.Play();
     }
 
     [Button]
