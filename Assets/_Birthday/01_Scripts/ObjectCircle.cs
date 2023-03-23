@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
+using UnityEditor;
 using UnityEngine;
 
 public class ObjectCircle : MonoBehaviour
@@ -31,7 +32,16 @@ public class ObjectCircle : MonoBehaviour
             var angle = angleBetweenObjects * i + angleOffset;
             var position = new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad), 0, Mathf.Sin(angle * Mathf.Deg2Rad)) * distanceFromCenter;
             var rotation = Quaternion.Euler(0, angle, 0);
+
+            //spawn as prefab
+#if UNITY_EDITOR
+            var newObject = PrefabUtility.InstantiatePrefab(prefabToSpawn) as GameObject;
+            newObject.transform.position = position;
+            newObject.transform.rotation = rotation;
+            newObject.transform.SetParent(transform);
+#else
             var newObject = Instantiate(prefabToSpawn, position, rotation, transform);
+#endif
         }
     }
 }
