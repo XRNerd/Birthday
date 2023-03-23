@@ -8,8 +8,7 @@ public class PinchDetection : MonoBehaviour
 
     [SerializeField] UnityEvent pinchEvent = new UnityEvent();
 
-    [SerializeField] OVRHand lHand;
-    [SerializeField] OVRHand rHand;
+
 
     bool isPinching = false;
 
@@ -22,7 +21,8 @@ public class PinchDetection : MonoBehaviour
             isPinching = true;
             return true;
         }
-        else{
+        else
+        {
             isPinching = false;
             return false;
         }
@@ -39,12 +39,23 @@ public class PinchDetection : MonoBehaviour
     {
         //Get the dominant hand from the OVRInput
 
-        if(isPinching == false)
+        if (isPinching == false)
         {
-            isHandPinching(lHand);
-            isHandPinching(rHand);
+            isHandPinching(Game.Instance.lHand);
+            isHandPinching(Game.Instance.rHand);
         }
 
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log("Collision Detected");
+        //if other has physics layer "Pinchable" and isPinching is true
+        if (other.gameObject.layer == LayerMask.NameToLayer("Fingers") && isPinching == true)
+        {
+            //invoke the pinch event
+            PinchEvent();
+        }
     }
 
     public void PinchEvent()
