@@ -2,17 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Oculus.Interaction;
-
+using UnityEngine.Events;
 public class PinchDetection : MonoBehaviour
 {
-    [SerializeField] OVRHand hand;
+
+    [SerializeField] UnityEvent pinchEvent = new UnityEvent();
+
+    [SerializeField] OVRHand lHand;
+    [SerializeField] OVRHand rHand;
+
+    bool isPinching = false;
 
     //Detect a pinch using the Oculus intergration Library
-    public void DetectPinch(OVRHand hand)
+    public bool isHandPinching(OVRHand hand)
     {
         if (hand.GetFingerIsPinching(OVRHand.HandFinger.Index))
         {
-            Debug.Log("Pinch Detected");
+            Debug.Log(hand.name + " Pinch Detected");
+            isPinching = true;
+            return true;
+        }
+        else{
+            isPinching = false;
+            return false;
         }
     }
 
@@ -26,6 +38,17 @@ public class PinchDetection : MonoBehaviour
     void Update()
     {
         //Get the dominant hand from the OVRInput
-        DetectPinch(hand);
+
+        if(isPinching == false)
+        {
+            isHandPinching(lHand);
+            isHandPinching(rHand);
+        }
+
+    }
+
+    public void PinchEvent()
+    {
+        pinchEvent.Invoke();
     }
 }
