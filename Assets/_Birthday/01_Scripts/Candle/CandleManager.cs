@@ -7,6 +7,7 @@ using System.Linq;
 
 public class CandleManager : MonoBehaviour
 {
+    [SerializeField] GameObject candlePrefab;
     [SerializeField] List<Candle> candles = new List<Candle>();
 
     private void OnValidate()
@@ -35,6 +36,8 @@ public class CandleManager : MonoBehaviour
 
         unlitCandles.ForEach(c => c.LightUp());
     }
+
+
 
 
 }
