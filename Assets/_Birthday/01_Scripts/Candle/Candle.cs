@@ -23,13 +23,18 @@ public class Candle : MonoBehaviour
         if (fireParticlesObject) fireParticles = fireParticlesObject.GetComponentsInChildren<ParticleSystem>().ToList();
     }
 
+    void Start()
+    {
+        transform.rotation = Quaternion.identity;
+    }
+
     [Button]
     public void PutOut()
     {
         if (isLit == false) return;
         TurnOffFire();
         isLit = false;
-        candleObject.DOLocalMoveY(-1f, dropDownTime).OnComplete(() =>
+        candleObject.DOLocalMoveY(-2f, dropDownTime).OnComplete(() =>
         {
             candleManager.LightUpTwoRandomCandles(this);
         });
