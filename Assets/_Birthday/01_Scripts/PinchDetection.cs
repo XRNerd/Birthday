@@ -15,17 +15,19 @@ public class PinchDetection : MonoBehaviour
     //Detect a pinch using the Oculus intergration Library
     public bool isHandPinching(OVRHand hand)
     {
-        if (hand.GetFingerIsPinching(OVRHand.HandFinger.Index))
-        {
-            Debug.Log(hand.name + " Pinch Detected");
-            isPinching = true;
-            return true;
-        }
-        else
-        {
-            isPinching = false;
-            return false;
-        }
+        isPinching = hand.GetFingerIsPinching(OVRHand.HandFinger.Index);
+        return isPinching;
+        // if (hand.GetFingerIsPinching(OVRHand.HandFinger.Index))
+        // {
+        //     Debug.Log(hand.name + " Pinch Detected");
+        //     isPinching = true;
+        //     return true;
+        // }
+        // else
+        // {
+        //     isPinching = false;
+        //     return false;
+        // }
     }
 
     // Start is called before the first frame update
@@ -39,11 +41,10 @@ public class PinchDetection : MonoBehaviour
     {
         //Get the dominant hand from the OVRInput
 
-        if (isPinching == false)
-        {
-            isHandPinching(Game.Instance.lHand);
-            isHandPinching(Game.Instance.rHand);
-        }
+
+        isHandPinching(Game.Instance.lHand);
+        isHandPinching(Game.Instance.rHand);
+
 
     }
 
