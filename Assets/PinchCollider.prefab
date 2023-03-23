@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6945421541150993832}
   - component: {fileID: 5727351053500171691}
   - component: {fileID: 8572092234606812493}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PinchCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 4604569903201862666}
   - component: {fileID: 2955427972310906825}
   - component: {fileID: 1876782767472329124}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

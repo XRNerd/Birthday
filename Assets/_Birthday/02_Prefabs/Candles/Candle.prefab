@@ -115,7 +115,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6522888936137650358}
         m_TargetAssemblyTypeName: Candle, Assembly-CSharp
-        m_MethodName: TurnOffFire
+        m_MethodName: PutOut
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
