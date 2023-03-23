@@ -59,12 +59,12 @@ public class Candle : MonoBehaviour
     public void TurnOnFire()
     {
         fireParticles.ForEach(p => p.Play());
-        putOutSource.Play();
     }
 
     [Button]
     public void TurnOffFire()
     {
         fireParticles.ForEach(p => p.Stop());
+        putOutSource.Play();
     }
 }
