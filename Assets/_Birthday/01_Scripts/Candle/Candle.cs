@@ -25,6 +25,8 @@ public class Candle : MonoBehaviour
 
     void Start()
     {
+        if (isLit) TurnOnFire();
+        else TurnOffFire();
         transform.rotation = Quaternion.identity;
     }
 
