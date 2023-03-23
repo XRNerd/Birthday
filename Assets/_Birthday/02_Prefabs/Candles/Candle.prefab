@@ -251,7 +251,6 @@ MonoBehaviour:
   fireParticles:
   - {fileID: 6100757268828794339}
   - {fileID: 1373621730889077480}
-  - {fileID: 6087256212682629408}
   isLit: 0
 --- !u!1 &6972160674534968639
 GameObject:
@@ -307,14 +306,6 @@ PrefabInstance:
     - target: {fileID: 2406776516157684093, guid: 6b232e917f7922d439e1053d49e47a24, type: 3}
       propertyPath: m_LocalScale.z
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2572770168108829654, guid: 6b232e917f7922d439e1053d49e47a24, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2572770168108829654, guid: 6b232e917f7922d439e1053d49e47a24, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4594710056852618281, guid: 6b232e917f7922d439e1053d49e47a24, type: 3}
       propertyPath: m_RootOrder
@@ -378,11 +369,6 @@ ParticleSystem:
 --- !u!1 &4397356887084839093 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7146948415660307008, guid: 6b232e917f7922d439e1053d49e47a24, type: 3}
-  m_PrefabInstance: {fileID: 6785098889225962229}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &6087256212682629408 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 744154124207711189, guid: 6b232e917f7922d439e1053d49e47a24, type: 3}
   m_PrefabInstance: {fileID: 6785098889225962229}
   m_PrefabAsset: {fileID: 0}
 --- !u!198 &6100757268828794339 stripped
