@@ -7,12 +7,15 @@ public class Billboard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(Camera.main.transform);
+
+        Vector3 direction = Camera.main.transform.position - transform.position;
+        transform.forward = -direction;
+        //transform.LookAt(Camera.main.transform);
     }
 }
