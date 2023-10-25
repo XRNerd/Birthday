@@ -4,6 +4,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using DG.Tweening;
 using System.Linq;
+using UnityEngine.Events;
 
 public class Candle : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class Candle : MonoBehaviour
     [SerializeField, FoldoutGroup("Dependancies")] List<ParticleSystem> fireParticles = new List<ParticleSystem>();
     [SerializeField, FoldoutGroup("Dependancies")] AudioSource constanceSource;
     [SerializeField, FoldoutGroup("Dependancies")] AudioSource putOutSource;
+    [SerializeField, FoldoutGroup("Events")] UnityEvent OnCanclePutOut;
     [FoldoutGroup("Debugging")] public bool isLit = false;
 
     void OnValidate()
@@ -41,6 +43,7 @@ public class Candle : MonoBehaviour
         {
             candleManager.LightUpTwoRandomCandles(this);
         });
+        OnCanclePutOut.Invoke();
     }
 
     [Button]

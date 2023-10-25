@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4399218752242160305}
   - component: {fileID: 4008925668169014158}
   - component: {fileID: 6950050527556977926}
+  - component: {fileID: 6492471265334834980}
   m_Layer: 0
   m_Name: Picture
   m_TagString: Untagged
@@ -66,6 +67,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8bf2d0b72387ce4da2f82127796aecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6492471265334834980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138021006514312541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba539be73e8e0454cb44427eece333a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 5808923229641827988}
+  ApplyOnStart: 0
+  uri: https://example.com/path/to/your/image.png
 --- !u!1 &7782190042503964035
 GameObject:
   m_ObjectHideFlags: 0
